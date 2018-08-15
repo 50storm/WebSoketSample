@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style rel="stylesheet"> 
+  body{ line-height: 150%; }
+  h1{
+  	font-size:15px ;
+  }
+  table{
+  	border: 1px #E3E3E3 solid;
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  }
+  table th {
+    padding: 5px;
+    border: #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+    background: #F5F5F5;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+ }
+ table td {
+    padding: 5px;
+    border: 1px #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+    text-align: center;
+    /*background: aqua;*/
+}
+.btn{
+	margin: 0.5px auto;
+    width: 90px;
+    cursor: pointer;
+    padding: 7px;
+
+}
+.btn:hover{
+      opacity: 0.8;
+}
+.notice{
+	padding: 10px;	
+	border: medium solid #ff00ff;
+}
+.under {
+  border-bottom: solid 3px #87CEFA;
+ }
+a {
+text-decoration: none;
+}
+    a:hover{color:red;}
+.text-message{
+	width:300px;
+    height:30px;
+}
+.ex{
+	margin 10px;    
+}
+.click-input:hover{
+    background-color:#00FFFF;
+}
+</style>
+</head>
+<body>
+<div　class="ex">
+    <h1><span class="under">ビデオチャット使い方</span></h1>
+    <a  href="https://www.hiro-lab.site/hiroapp/skyway/sdk/examples/p2p-videochat/index.html" target="_blank"><span class="under">ビデオチャット起動</span></a>のリンクを押すと、ビデオが起動します。<br>
+    あなたのIDをチャットのプラベートメッセージで教えあってください。
+    <br>
+    <a href="./使い方.pdf" style="color:red;">ビデオチャット使い方マニュアル</a>
+</div>
+
+
+<div>
+<h1>
+    <span class="under">クリック入力(挿入位置)</span>
+    <input type="radio" id="after" name="position" value="0" checked /> 後
+    <input type="radio" id="before" name="position" value="1" /> 前
+</h1>
+<table>
+<tr>
+    <td class="click-input" >こんにちは！ </td>
+    <td class="click-input" >またね〜！ </td>
+    <td class="click-input" >よろしくお願いします！</td>
+    <td class="click-input" >ありがとう！ </td>
+    <td class="click-input" >トイレ行ってきます！ </td>
+</tr>
+</table>
+</div>
+<div>
+<h1>メッセージ入力</h1>	
+<form onsubmit="sendMessage(this); return false;">
+  <input type="text" name="comment" class="text-message" id="chat-text">
+  <input  class="btn" style="background: #A4C6FF" type="submit" value="送信">
+</form>
+<button class="btn" type="button" onclick="cc.getNameList();">リスト</button>
+</div>
+<!-- 修正:お知らせ -->
+<div>※管理者からのお知らせ</div>
+<div class="notice">
+	<div id="notice"></div>
+</div>
+<div id="output"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./ChatDBClient.js"></script>
+</body>
+</html>

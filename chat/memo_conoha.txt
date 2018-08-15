@@ -1,0 +1,6 @@
+chatのdbと、messages作る
+port 8888を開ける
+チャットでつかう、お知らせ昨日のタイマー、文字列設定
+DBのユーザーとパスワードを設定
+クライアントの接続ポートを8888に設定
+http://www.hiro-lab.site:8888/ChatDBClient.html
